@@ -18,6 +18,7 @@ function App() {
      <Test05/>
      <Test06/>
      <Test07 />
+     <h2>헬로 리액트</h2>
     </div>
   );
 }
