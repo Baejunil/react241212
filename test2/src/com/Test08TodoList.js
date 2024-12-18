@@ -1,7 +1,7 @@
 import "../css/Test08.css"
-import Tset08TodoItem from "./Tset08TodoItem"
+import Tset08TodoItem from "./Tset08TodoItem";
 import { useState } from 'react'
-const Test08TodoList = ({todo}) => {
+const Test08TodoList = ({todo,onUpdate,onDelete}) => {
     const [search, setSearch] =useState(""); 
      const onChangeSearch= (e) => { 
      setSearch(e.target.value);
@@ -10,7 +10,7 @@ const Test08TodoList = ({todo}) => {
     return search === ""
     ? todo 
     : todo.filter((it) => 
-    it.content.toLowerCase().includes (search.toLowerCase)); 
+    it.content.toLowerCase().includes (search.toLowerCase())); 
 };
     return( <div className="Test08TodoList">
         <h4>Todo List🍀</h4>
@@ -22,7 +22,10 @@ const Test08TodoList = ({todo}) => {
         <div className="list_wrapper">
         
         {getSearchResult().map((it)=>(
-            <Tset08TodoItem key={it.id}{ ...it}/>
+            <Tset08TodoItem key={it.id}{ ...it} 
+            onUpdate={onUpdate}
+            onDelete={onDelete}
+            />
         ))}
         </div>
     </div>);

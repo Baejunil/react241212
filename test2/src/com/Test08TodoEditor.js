@@ -18,7 +18,7 @@ const Test08TodoEditor = ({onCreate})=>{
  }
 };
 return <div className="Test08TodoEditor">
-    <h4>새로운 Todo 작성하기 </h4>
+    <h4>새로운 Todo 작성하기✏ </h4>
      <div className="editor_wrapper">
      <input
       ref={inputRef}  

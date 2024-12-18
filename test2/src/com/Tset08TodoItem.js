@@ -1,10 +1,17 @@
 import "../css/Test08.css"
 
-const Tset08TodoItem = ({ id, content, isDone, createdDate }) =>{
+const Tset08TodoItem = ({ id, content, isDone, createdDate, onUpdate , onDelete}) =>{
+    const onChangeCheckbox = () => {
+        onUpdate(id);
+    }
+    const onClickDelete = ()=> {
+        onDelete(id);
+    };
     return (
         <div className="Tset08TodoItem">
         <div className="checkbox_col"> 
-        <input checked={isDone} type="checkbox"/>
+        <input onChange={onChangeCheckbox}
+        checked={isDone} type="checkbox"/>
          </div>
          <div className="title_col">{content}
             </div> 
@@ -12,7 +19,7 @@ const Tset08TodoItem = ({ id, content, isDone, createdDate }) =>{
             {new Date(createdDate).toLocaleDateString()} 
             </div> 
          <div className="btn_col"> 
-            <button>삭제</button>
+            <button onClick={onClickDelete}>삭제</button>
         </div>
         </div>
     )
