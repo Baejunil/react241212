@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import App1 from './App1';
+import App2 from './App2';
+import App3 from './App3';
+import { ColorProvider } from "./ColorContext";
 ;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-    <App1 />
+<ColorProvider>
+    <App3 />
+  </ColorProvider>,
 );
 
 // If you want to start measuring performance in your app, pass a function
